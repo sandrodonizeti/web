@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Listar Clientes</title>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="button-link">Menu</button>
+        <div class="dropdown-content">
+            <a href="/clientes" class="button button-link">Lista de Clientes</a>
+            <a href="/usuarios" class="button button-link">Lista de Usuários</a>
+            <a href="/clientes/cadastrar" class="button button-link">Cadastrar Cliente</a>
+            <a href="/usuarios/cadastrar" class="button button-link">Cadastrar Usuário</a>
+            <a href="/usuarios/atualizar/<%= user.id %>" class="button button-link">Atualizar Usuário</a>
+            <a href="/usuarios/exibir/<%= user.id %>" class="button button-link">Exibir Perfil</a>
+            <form action="/autenticacao/logout" method="POST">
+                <input type="submit" value="Sair" class="button button-sair">
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <h1>Lista de Clientes</h1>
+    </div>
+
+
+    <table border>
+        <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Usuario</th>
+            <th>Data de Nascimento</th>
+            <th>Email</th>
+            <th>Sexo</th>
+            <th>Status</th>
+            <th>Data de Cadastro</th>
+            <th>Ações</th>
+        </thead>
+        <tbody>
+            <% for (const cliente of clientes) { %>
+                <tr>
+                    <td>
+                        <%= cliente.id %>
+                    </td>
+                    <td>
+                        <%= cliente.name %>
+                    </td>
+                    <td>
+                        <%= cliente.username %>
+                    </td>
+                    <td>
+                        <%= cliente.birthDate %>
+                    </td>
+                    <td>
+                        <%= cliente.email %>
+                    </td>
+                    <td>
+                        <%= cliente.sex %>
+                    </td>
+                    <td>
+                        <%= cliente.status %>
+                    </td>
+                    <td>
+                        <%= cliente.createdAt %>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a href="/clientes/atualizar/<%= cliente.id %>">Atualizar</a></li>
+                            <li><a href="/clientes/deletar/<%= cliente.id %>">Deletar</a></li>
+                            <li><a href="/clientes/exibir/<%= cliente.id %>">Exibir</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <div>
+        <form action="/autenticacao/logout" method="POST">
+            <input type="submit" value="Sair" class="button button-sair">
+        </form>
+    </div>
+
+</body>
+
+</html>

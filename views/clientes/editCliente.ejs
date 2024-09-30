@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Atualizar Cliente</title>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="button-link">Menu</button>
+        <div class="dropdown-content">
+            <a href="/clientes" class="button button-link">Lista de Clientes</a>
+            <a href="/usuarios" class="button button-link">Lista de Usuários</a>
+            <a href="/clientes/cadastrar" class="button button-link">Cadastrar Cliente</a>
+            <a href="/usuarios/cadastrar" class="button button-link">Cadastrar Usuário</a>
+            <a href="/usuarios/atualizar/<%= user.id %>" class="button button-link">Atualizar Usuário</a>
+            <a href="/usuarios/exibir/<%= user.id %>" class="button button-link">Exibir Perfil</a>
+            <form action="/autenticacao/logout" method="POST">
+                <input type="submit" value="Sair" class="button button-sair">
+            </form>
+        </div>
+    </div>
+
+    <form method="post" action="/clientes/atualizar/<%= cliente?.id %>" id="register-form">
+        <div class="form-card">
+            <div class="form-card-header">
+                <h2>Atualizar Cliente</h2>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Data de Nascimento</label>
+                    <input type="date" id="birthDate" name="birthDate" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sex">Sexo</label>
+                    <select id="sex" name="sex" class="form-control">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                        <option value="Prefiro não responder">Prefiro não responder</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Atualizar" class="btn-primary">
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <form action="/autenticacao/logout" method="POST">
+            <input type="submit" value="Sair" class="button button-sair">
+        </form>
+    </div>
+
+</body>
+
+</html>

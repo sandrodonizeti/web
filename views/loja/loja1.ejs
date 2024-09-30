@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Página Empresa</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="card-header">
+            <ul class="nav">
+                <div class="dropdown">
+                    <a class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="/">Produto</a>
+                        <a href="/loja/loja1">Produto 1</a>
+                        <a href="/loja/loja2">Produto 2</a>
+                        <a href="/loja/loja3">Produto 3</a>
+                        <a href="/loja/loja4">Produto 4</a>
+                    </div>
+                </div>
+            </ul>
+            <div class="container">
+                <div class="header-1">
+                    <h1>
+                        < / > 2024 litoralnortesoftware
+                    </h1>
+                </div>    
+                <div class="header-2 ml-auto">
+                </div>
+                <% if (typeof user !== 'undefined' && user) { %>
+                    <h1>Bem-vindo, <%= user.username %>!</h1>
+
+                    <div class="dropdown">
+                        <button class="button-link">UpDate</button>
+                        <div class="dropdown-content">
+                            <a href="/clientes" class="button button-link">Lista de Clientes</a>
+                            <a href="/clientes/cadastrar" class="button button-link">Cadastrar Cliente</a>
+                            <a href="/usuarios/cadastrar" class="button button-link">Cadastrar Usuário</a>
+                            <a href="/usuarios/atualizar/<%= user.id %>" class="button button-link">Atualizar Usuário</a>
+                            <a href="/usuarios/exibir/<%= user.id %>" class="button button-link">Exibir Perfil</a>
+                            <form action="/autenticacao/logout" method="POST">
+                                <input type="submit" value="Sair" class="button button-sair">
+                            </form>
+                        </div>
+                    </div>
+
+
+                <% } else { %>
+                    <div class="button-entrar">
+                        <p>
+                            <a href="/autenticacao/login"><h1>Usuário</h1></a>
+                        </p>
+                    </div>       
+                <% } %>
+                
+            </div>
+        </div>
+    </header>
+    <h1>
+        Produto 1
+    </h1>
+    <div class="container">
+        <section class="produto">
+
+            <div class="produto-card">
+                <img src="/images/h10.jpg" alt="Produto 1">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h11.jpg" alt="Produto 2">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h12.jpg" alt="Produto 3">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h13.jpg" alt="Produto 4">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h14.jpg" alt="Produto 5">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h15.jpg" alt="Produto 6">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h16.jpg" alt="Produto 7">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h17.jpg" alt="Produto 8">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+            <div class="produto-card">
+                <img src="/images/h18.jpg" alt="Produto 9">
+                <h3>Produto novos</h3>
+                <p>Produto de alta qualidade.</p>
+            </div>
+        </section>
+    </div>
+    <h1>Protótipo.</h1>
+    <footer class="footer">
+        <div class="column">
+            <h3>Contatos</h3>
+            <ul>
+                <li>Telefone: (12) 99148-5333</li>
+                <li>Telefone: (12) 97812-2063<a href="https://web.whatsapp.com/55 12 9975910549/"><img
+                            src="/images/whatsapp.png" class="f"></a></li>
+                <li>Email: litoralnortesoftware@hotmail.com</li>
+                <li>Gmail: litoralnortesoftware@gmail.com</li>
+            </ul>
+
+
+        </div>
+        <div class="column">
+            <h3>Endereço</h3>
+            <ul>
+                <li>litoralnortesoftware:</li>
+                <li>Rua Rrrrrrr, Nº 4555</li>
+                <li>Bairro Bbbbbbb</li>
+                <li>Caraguattuba - São Paulo, CEP 11674-760</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Redes Sociais</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        < / > 2024 litoralnortesoftware: Todos os direitos reservados.
+    </div>
+</body>

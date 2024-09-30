@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>Perfil do Usuário</title>
+</head>
+
+<body>
+
+  <div>
+    <form action="/autenticacao/logout" method="POST">
+      <input type="submit" value="Sair" class="button button-sair">
+    </form>
+  </div>
+
+  <div>
+    <h1>Perfil do Usuário</h1>
+  </div>
+
+  <h2>Bem-vindo, <%= usuario.nome %>
+  </h2>
+  <p>Apelido: <%= usuario.apelido %>
+  </p>
+  <p>Data de Nascimento: <%= usuario.dataNascimento %>
+  </p>
+  <p>Email: <%= usuario.email %>
+  </p>
+  <p>Sexo: <%= usuario.sexo %>
+  </p>
+  <p>Estado: <%= usuario.estado %>
+  </p>
+
+  <form method="POST" action="/usuarios/perfil/<%= usuario.id %>?_method=DELETE">
+    <button type="submit">Deletar Perfil</button>
+  </form>
+
+  <div class="container">
+    <div class="button-link">
+      <a href="/clientes">Lista de Clientes</a><br>
+    </div>
+
+    <div class="button-link">
+      <a href="/usuarios">Lista de Usuários</a><br>
+    </div>
+
+    <div class="button-link">
+      <a href="/clientes/cadastrar">Cadastrar Cliente</a><br>
+    </div>
+
+    <div class="button-link">
+      <a href="/usuarios/cadastrar">Cadastrar Usuário</a><br>
+    </div>
+  </div>
+
+</body>
+
+</html>
